@@ -7,29 +7,16 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
+
+import static Setup.PropertiesData.*;
 
 public class SetupDriver {
 
     private static WebDriver driver;
 
-    private static Properties loadPropertyFile() throws IOException {
-        Properties properties = new Properties();
-        FileInputStream propData = new FileInputStream("src/main/resources/data.properties");
-        properties.load(propData);
-        return properties;
-    }
 
-    private static String getBrowserNameFromProperty() throws IOException {
-        return loadPropertyFile().getProperty("browser");
-    }
-
-    private static String getUrlFromProperty() throws IOException {
-        return loadPropertyFile().getProperty("Url");
-    }
 
     public static WebDriver loadDriver() throws IOException {
         String browserName = getBrowserNameFromProperty();
