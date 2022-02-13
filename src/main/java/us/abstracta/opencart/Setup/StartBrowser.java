@@ -1,4 +1,4 @@
-package Setup;
+package us.abstracta.opencart.Setup;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -7,20 +7,15 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import java.io.IOException;
 import java.time.Duration;
 
-import static Setup.PropertiesData.*;
+public class StartBrowser {
 
-public class SetupDriver {
+    private WebDriver driver;
 
-    private static WebDriver driver;
-
-
-
-    public static WebDriver loadDriver() throws IOException {
-        String browserName = getBrowserNameFromProperty();
-        String url = getUrlFromProperty();
+    public WebDriver loadDriver() {
+        String browserName = Config.getBrowserNameFromProperty();
+        String url = Config.getUrlFromProperty();
 
         switch (browserName) {
             case "chrome" -> {
