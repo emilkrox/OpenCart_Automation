@@ -21,9 +21,9 @@ public class LoginTest {
        startBrowser = new StartBrowser();
        driver = startBrowser.loadDriver();
 
-        homePage = new HomePage(driver);
-        loginPage = new LoginPage(driver);
-        accountPage = new AccountPage(driver);
+       homePage = new HomePage(driver);
+       loginPage = new LoginPage(driver);
+       accountPage = new AccountPage(driver);
     }
 
     @AfterClass
